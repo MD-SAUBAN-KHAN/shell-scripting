@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  vars:
+    aws_profile: IAM
+  become: yes
+  tasks:
+    - name: Ensure S3 bucket exists
+      amazon.aws.s3_bucket:
+        name: dummydummy-mdsk
+        state: present
+     
+      
